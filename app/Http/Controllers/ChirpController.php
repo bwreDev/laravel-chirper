@@ -17,7 +17,7 @@ class ChirpController extends Controller
     {
         //
         return Inertia::render('Chirps/index', [
-            //
+            'chirps' => Chirp::with('user:id,name')->latest()->get(),  //research pagination!!!
         ]);
     }
 
